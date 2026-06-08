@@ -13,4 +13,15 @@
  */
 function User() {
     // implement here
+    let password = undefined;
+
+    this.setPassword = function(new_pwd){
+        if(password !== undefined){
+            throw new Error('Error');
+        }
+        password = new_pwd;
+    }
+    this.checkPassword = function(pwd){
+        return password === pwd;
+    }
 }
