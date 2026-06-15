@@ -6,4 +6,15 @@
  */
 function format(num) {
   // your code here
+  let parts = num.toString().split('.');
+  let intpart = parts[0];
+  
+
+  let reversed = intpart.split('').reverse();
+  for(let i = 3; i < intpart.length; i += 4){
+    reversed.splice(i, 0, ',');
+  }
+  let res = reversed.reverse().join('');
+
+  return parts[1]? res + '.' + parts[1]: res;
 }

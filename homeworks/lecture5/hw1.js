@@ -2,12 +2,12 @@
 
 // 1
 for (var i = 0; i < 5; i++) {
-  setTimeout(() => console.log(i), 1000);
+  setTimeout(() => console.log(i), 1000);//5,5,5,5,5
 }
 
 // 2
 for (let i = 0; i < 5; i++) {
-  setTimeout(() => console.log(i), 1000);
+  setTimeout(() => console.log(i), 1000);//0,1,2,3,4
 }
 
 // 3
@@ -15,13 +15,13 @@ for (var i = 0; i < 5; i++) {
   (function (i) {
     setTimeout(() => console.log(i), 1000);
   })(i);
-}
+}//0,1,2,3,4
 
 // 4
 let fn = () => {
   console.log('I am fn');
 }
-setTimeout(fn, 1000);
+setTimeout(fn, 1000);//'I am fn'
 fn = () => {
   console.log('I am another fn');
 }
@@ -30,5 +30,5 @@ fn = () => {
 let obj = {
   name: 'obj',
 }
-setTimeout(() => console.log(obj), 1000);
+setTimeout(() => console.log(obj), 1000);//'obj
 obj.name = 'another obj';

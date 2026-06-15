@@ -15,6 +15,14 @@
  */
 function debounce(func, delay) {
   // your code here
+  let timeid;
+  return function(){
+    clearTimeout(timeid);
+
+    timeid = setTimeout(()=>{
+      func();
+    }, delay)
+  }
 }
 
 /**
@@ -34,4 +42,14 @@ function debounce(func, delay) {
  */
 function throttle(func, delay) {
   // your code here
+  let cooldown = false;
+  return function(){
+    if(!cooldown){
+      func();
+      setTimeout(()=>{
+        cooldown = false;
+      },delay)
+      cooldown = true;
+    }
+  }
 }

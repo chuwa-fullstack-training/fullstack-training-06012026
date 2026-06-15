@@ -8,3 +8,19 @@
  */
 
 // your code here
+let instance = null;
+
+class Singleton{
+    constructor(){
+        if(instance){
+            return instance;
+        }
+        else{
+            instance = this;
+        }
+    }
+}
+
+ const instance1 = new Singleton();
+ const instance2 = new Singleton();
+ console.log(instance1 === instance2); // Output: true
