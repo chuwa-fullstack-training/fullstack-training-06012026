@@ -42,3 +42,12 @@
  *  }
  * }
  */
+const express = require('express');
+const router3 = require('./router3');
+const app = express();
+
+app.use('/hw2', router3);
+
+app.listen(3000, () => {
+    console.log('Running on port: 3000');
+})

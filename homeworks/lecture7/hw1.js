@@ -14,3 +14,21 @@
  */
 
 // your code here
+const fs = require('fs');
+const path = require('path');
+
+function fileFilter(dirPath, exfilter){
+    const res = []
+    fs.readdir(dirPath, (err, files) => {
+        for(let file of files){
+            if(path.extname(file).slice(1) === exfilter) res.push(file);
+        }
+        for(let nm of res){
+            console.log(nm);
+        }
+    })
+}
+
+const dirPath = process.argv[2];
+const exfilter = process.argv[3];
+fileFilter(dirPath, exfilter);

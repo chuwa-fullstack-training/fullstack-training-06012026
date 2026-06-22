@@ -1,0 +1,20 @@
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title Cool Home Page
+    body
+        h1 Welcome to Nodejs tutorial
+        form(action="/create-post", method="post")
+            input(type="text", name="title")
+            input(type="text", name="content")
+            input(type="submit", value="submit")
+        p#result
+
+        script. 
+            const params = new URLSearchParams(window.location.search);
+            let title = params.get('title');
+            let content = params.get('content');
+            if(title){
+                document.getElementById('result').innerText = `title = ${title}  content = ${content}`;
+            }        
